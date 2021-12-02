@@ -1,0 +1,5 @@
+#!/bin/sh
+docker login -u "${PLUGIN_USERNAME}" -p "${PLUGIN_PASSWORD}"
+docker pull ${PLUGIN_REPO}:${PLUGIN_SOURCE_TAG}
+docker tag  ${PLUGIN_REPO}:${PLUGIN_SOURCE_TAG} ${PLUGIN_REPO}:${PLUGIN_TARGET_TAG}
+docker push ${PLUGIN_REPO}:${PLUGIN_TARGET_TAG}
